@@ -20,6 +20,4 @@ public class MoviesApplication {
 			return "Hello World";
 		} 
 
-	
-
 }
