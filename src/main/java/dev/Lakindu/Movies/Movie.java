@@ -5,6 +5,7 @@ import java.util.List;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,4 +39,15 @@ public class Movie {
     private String poster;
     private List<String> genres;
     private List<String> backDrops;
+
+
+    //One to many relationship between Review and Movie can be written as this
+    //All the reviews related to this movie goes into this list of reviews
+
+    //@DocumentReference if we use this annotation here then only the ids of the reviews will be stored in the database
+    //and actual reviews will be stored in another collection
+
+    //This is called manual referencing
+    @DocumentReference
+    private List<Review> reviewIds;
 }
