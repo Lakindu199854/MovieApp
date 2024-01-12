@@ -27,8 +27,12 @@ import lombok.NoArgsConstructor;
 
 public class Review {
 
-@Id //Id is the unique identifier for each movie
-private ObjectId id;
-private String body;
+    @Id //Id is the unique identifier for each movie
+    private ObjectId id;
+    private String body;
+
+    Review(String review){
+        this.body=review;
+    }
 
 }
