@@ -1,28 +1,27 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getAllMovies } from './Services/MovieServices';
+import { getMoviesByImdbId } from './Services/MovieServices';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import Layout from './Layout'; 
 
 function App() {
-  const [movies,setMovies]=useState();
-
-  const getMovies=async()=>{
-    try{
-      const response=await getAllMovies("/api/v1/movies");
-      console.log(response.data);
-      setMovies(response.data);
-    }catch(err){
-      console.log(err);
-    }
-
-  }
-  useEffect(()=>{
-    getMovies();
-  },[])
+ 
 
 
   return (
-   <>
-   </>
+    <BrowserRouter>
+      <Routes>
+        {/* <Route path="/" element={<Users />} /> */}
+
+          <Route path="/" element={<Layout />}>
+            {/* <Route path="/" element={<Users/>}/>  */}
+            <Route path="/home" element={<Home />} />
+          </Route>
+  
+      </Routes>
+    </BrowserRouter>
   );
 }
 

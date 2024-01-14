@@ -10,3 +10,14 @@ export const getAllMovies=async(path)=>{
         
     }
 }
+
+export const getMoviesByImdbId=async(path)=>{
+    try{
+        const response=await axios.get(base_url+path);
+        return response;
+    }catch(error){
+
+    }
+}
+
+
