@@ -5,6 +5,7 @@ import { getMoviesByImdbId } from './Services/MovieServices';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from './Layout'; 
+import Review from './pages/Review';
 
 function App() {
  
@@ -17,7 +18,8 @@ function App() {
 
           <Route path="/" element={<Layout />}>
             {/* <Route path="/" element={<Users/>}/>  */}
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home/>} />
+            <Route path="/review/:imdbId" element={<Review/>} />
           </Route>
   
       </Routes>

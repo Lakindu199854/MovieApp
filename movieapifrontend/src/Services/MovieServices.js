@@ -11,13 +11,12 @@ export const getAllMovies=async(path)=>{
     }
 }
 
-export const getMoviesByImdbId=async(path)=>{
+export const getMoviesByImdbId=async(imdbId)=>{
     try{
-        const response=await axios.get(base_url+path);
+        const response=await axios.get(base_url+"/api/v1/movies/"+imdbId);
         return response;
     }catch(error){
 
     }
 }
-
 
